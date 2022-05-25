@@ -1,0 +1,3 @@
+build-tools;30.0.3
+platforms;android-30
+platform-tools
