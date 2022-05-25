@@ -40,7 +40,7 @@ RUN yes | ${ANDROID_HOME}/cmdline-tools/bin/sdkmanager --sdk_root=${ANDROID_HOME
 # RUN while read -r package; do PACKAGES="${PACKAGES}${package} "; done < ./packages.txt && \
 #     ${ANDROID_HOME}/cmdline-tools/bin/sdkmanager --sdk_root=${ANDROID_HOME} ${PACKAGES}
 
-ADD ~/packages.txt .
+ADD packages.txt .
 
 RUN while read -r package; do PACKAGES="${PACKAGES}${package} "; done < ./packages.txt && \
         ${ANDROID_HOME}/cmdline-tools/bin/sdkmanager --sdk_root=${ANDROID_HOME} ${}PACKAGES        
