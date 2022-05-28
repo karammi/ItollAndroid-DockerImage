@@ -32,17 +32,7 @@ RUN wget --output-document=gradle-${GRADLE_VERSION}-all.zip https://downloads.gr
         && touch ~/.android/repository.cfg
 
 
-RUN yes | ${ANDROID_HOME}/cmdline-tools/bin/sdkmanager --sdk_root=${ANDROID_HOME} --licenses \
- && ${ANDROID_HOME}/cmdline-tools/bin/sdkmanager --sdk_root=${ANDROID_HOME} --update
+RUN yes | ${ANDROID_HOME}/cmdline-tools/bin/sdkmanager --sdk_root=${ANDROID_HOME} --licenses
 
-
-# ADD packages.txt .
-# RUN while read -r package; do PACKAGES="${PACKAGES}${package} "; done < ./packages.txt && \
-#     ${ANDROID_HOME}/cmdline-tools/bin/sdkmanager --sdk_root=${ANDROID_HOME} ${PACKAGES}
-
-ADD packages.txt .
-
-RUN while read -r package; do PACKAGES="${PACKAGES}${package} "; done < ./packages.txt && \
-        ${ANDROID_HOME}/cmdline-tools/bin/sdkmanager --sdk_root=${ANDROID_HOME} ${PACKAGES}
-
-CMD ["echo", "hello from first docker image"]
+# RUN ${ANDROID_HOME}/cmdline-tools/bin/sdkmanager --sdk_root=${ANDROID_HOME} "build-tools;32.0.0" "platforms;android-32" "platform-tools"
+RUN ${ANDROID_HOME}/cmdline-tools/bin/sdkmanager --sdk_root=${ANDROID_HOME} "build-tools;32.0.0"
