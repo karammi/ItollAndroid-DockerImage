@@ -3,6 +3,14 @@ A Docker file for preparing android SDK
 
 
 
+# gitlab-ci-android
+
+https://hub.docker.com/r/inovex/gitlab-ci-android/
+
+```
+image: XXX
+
+
 before_script:
 
   - chmod +x ./gradlew
@@ -93,3 +101,6 @@ release-sdk-android:
     - ./*.txt
   
   when: manual
+
+```
+
