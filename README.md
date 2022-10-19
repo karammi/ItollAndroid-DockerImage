@@ -59,27 +59,27 @@ static_analysis:
 build-sdk-android:
   stage: build
   
-  script:
-    - ./gradlew assembleAndroid
-    - mv ./sdk/build/outputs/aar/sdk-android-debug.aar ./sdk-android-debug-v$VERSION_NAME.aar
+#  script:
+#    - ./gradlew assembleAndroid
+#    - mv ./sdk/build/outputs/aar/sdk-android-debug.aar ./sdk-android-debug-v$VERSION_NAME.aar
     
-  artifacts:
-    paths:
-    - ./*.aar
-    - ./info.txt
+#  artifacts:
+#    paths:
+#    - ./*.aar
+#    - ./info.txt
 
 
-build-app-android:
-  stage: build
+#build-app-android:
+#  stage: build
   
-  script:
-    - ./gradlew assembleDebug
-    - mv ./app/build/outputs/apk/debug/app-debug.apk ./app-android-debug-v$VERSION_NAME.apk
+#  script:
+#    - ./gradlew assembleDebug
+#    - mv ./app/build/outputs/apk/debug/app-debug.apk ./app-android-debug-v$VERSION_NAME.apk
     
-  artifacts:
-    paths:
-    - ./*.apk
-    - ./info.txt
+#  artifacts:
+#    paths:
+#    - ./*.apk
+#    - ./info.txt
 
 
 release-sdk-android:
